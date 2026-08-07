@@ -6,7 +6,7 @@
 <title>Donate — WWOA</title>
 <link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,36 +15,37 @@
   <div class="nav-wrap">
     <a href="index.html" class="brand">
       <img src="images/logo.jpg" alt="WWOA logo">
-      <span class="brand-text">Wahaj Welfare<br><small>Organization for Afghanistan</small></span>
+      <span class="brand-text"><span data-i18n="brand.name">Wahaj Welfare</span><br><small data-i18n="brand.sub">Organization for Afghanistan</small></span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="donate.html" class="active">Donate</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="donate.html" class="active" data-i18n="nav.donate">Donate</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a href="donate.html" class="btn btn-primary nav-cta">Donate</a>
+    <button id="lang-toggle" class="lang-toggle-btn" type="button">&#127760; <span id="lang-toggle-label">دری</span></button>
+    <a href="donate.html" class="btn btn-primary nav-cta" data-i18n="nav.donateBtn">Donate</a>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Support Our Work</span>
-    <h1>Your support reaches real people.</h1>
-    <p>Every contribution helps WWOA extend healthcare, vocational training, and psychosocial support to more women and children across Afghanistan.</p>
+    <span class="eyebrow" data-i18n="donate.eyebrow">Support Our Work</span>
+    <h1 data-i18n="donate.h1">Your support reaches real people.</h1>
+    <p data-i18n="donate.lead">Every contribution helps WWOA extend healthcare, vocational training, and psychosocial support to more women and children across Afghanistan.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width:640px;">
     <div class="donate-panel">
-      <span class="coming-soon">Online Giving — Coming Soon</span>
-      <h2>Online donations aren't open yet</h2>
-      <p>We're finalizing our secure payment setup so every donation is processed safely. In the meantime, please reach out directly and we'll help you make a contribution.</p>
-      <a href="contact.html" class="btn btn-primary">Contact Us to Donate</a>
+      <span class="coming-soon" data-i18n="donate.comingSoon">Online Giving — Coming Soon</span>
+      <h2 data-i18n="donate.notOpenH2">Online donations aren't open yet</h2>
+      <p data-i18n="donate.notOpenP">We're finalizing our secure payment setup so every donation is processed safely. In the meantime, please reach out directly and we'll help you make a contribution.</p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="donate.contactBtn">Contact Us to Donate</a>
       <p class="small-note" style="margin-top:22px;">info@wahajwelfare.org &nbsp;&middot;&nbsp; +93 794 349 185</p>
     </div>
   </div>
@@ -52,20 +53,20 @@
 
 <section class="section section--cream2">
   <div class="container">
-    <span class="eyebrow">Where Your Support Goes</span>
-    <h2>What a donation helps fund</h2>
+    <span class="eyebrow" data-i18n="donate.whereEyebrow">Where Your Support Goes</span>
+    <h2 data-i18n="donate.whereH2">What a donation helps fund</h2>
     <div class="grid grid-3" style="margin-top:32px;">
       <div class="card"><div class="card-body">
-        <h3>Medical Camps</h3>
-        <p>Medicine, staff, and logistics for free medical camps like the one held in Kama district, Nangarhar.</p>
+        <h3 data-i18n="donate.w1H3">Medical Camps</h3>
+        <p data-i18n="donate.w1P">Medicine, staff, and logistics for free medical camps like the one held in Kama district, Nangarhar.</p>
       </div></div>
       <div class="card"><div class="card-body">
-        <h3>Vocational Training</h3>
-        <p>Equipment and instruction for skills programs — like sewing and tailoring — that help women earn income.</p>
+        <h3 data-i18n="donate.w2H3">Vocational Training</h3>
+        <p data-i18n="donate.w2P">Equipment and instruction for skills programs — like sewing and tailoring — that help women earn income.</p>
       </div></div>
       <div class="card"><div class="card-body">
-        <h3>Wellbeing Sessions</h3>
-        <p>Facilitators and materials for mental health and confidence-building sessions for women.</p>
+        <h3 data-i18n="donate.w3H3">Wellbeing Sessions</h3>
+        <p data-i18n="donate.w3P">Facilitators and materials for mental health and confidence-building sessions for women.</p>
       </div></div>
     </div>
   </div>
@@ -76,31 +77,32 @@
     <div>
       <div class="brand" style="color:#fff; margin-bottom:14px;">
         <img src="images/logo.jpg" alt="WWOA logo" style="height:48px;">
-        <span class="brand-text" style="color:#fff;">Wahaj Welfare<br><small style="color:#9C9884;">Organization for Afghanistan</small></span>
+        <span class="brand-text" style="color:#fff;"><span data-i18n="brand.name">Wahaj Welfare</span><br><small style="color:#9C9884;" data-i18n="brand.sub">Organization for Afghanistan</small></span>
       </div>
-      <p style="max-width:320px; font-size:.9rem;">An independent, non-political, non-profit organization serving Afghanistan since 2014.</p>
+      <p style="max-width:320px; font-size:.9rem;" data-i18n="footer.tagline">An independent, non-political, non-profit organization serving Afghanistan since 2014.</p>
     </div>
     <div>
-      <h4>Explore</h4>
-      <a href="about.html">About Us</a>
-      <a href="projects.html">Projects</a>
-      <a href="donate.html">Donate</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <h4 data-i18n="footer.explore">Explore</h4>
+      <a href="about.html" data-i18n="nav.about">About Us</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="donate.html" data-i18n="nav.donate">Donate</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h4 data-i18n="footer.contactHeading">Contact</h4>
       <a href="mailto:info@wahajwelfare.org">info@wahajwelfare.org</a>
       <a href="tel:+93794349185">+93 794 349 185</a>
-      <a href="#">Bahristan, Dr. Abdullah St, Kabul, Afghanistan</a>
+      <a href="#" data-i18n="footer.address">Bahristan, Dr. Abdullah St, Kabul, Afghanistan</a>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>&copy; 2026 Wahaj Welfare Organization for Afghanistan (WWOA).</span>
-    <span>Registered with the Ministry of Economy — Reg. No. 3198</span>
+    <span data-i18n="footer.copyright">&copy; 2026 Wahaj Welfare Organization for Afghanistan (WWOA).</span>
+    <span data-i18n="footer.registration">Registered with the Ministry of Economy — Reg. No. 3198</span>
   </div>
 </footer>
 
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -289,3 +289,28 @@ footer a:hover{color:var(--sand);}
 .page-hero p{color:#D9D2BE; max-width:640px;}
 
 .small-note{font-size:.85rem; color:var(--ink-soft);}
+
+/* ---------- Language toggle ---------- */
+.lang-toggle-btn{
+  display:flex; align-items:center; gap:6px;
+  background:none; border:1px solid var(--line);
+  padding:8px 14px; border-radius:var(--radius);
+  font-size:.85rem; font-weight:700; color:var(--navy);
+  cursor:pointer;
+}
+.lang-toggle-btn:hover{border-color:var(--sand); color:var(--sand);}
+
+/* ---------- Dari / RTL support ---------- */
+html[lang="fa"] body{
+  font-family:"Noto Naskh Arabic","Vazirmatn",var(--font-body);
+}
+html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] h4{
+  font-family:"Noto Naskh Arabic","Vazirmatn",var(--font-display);
+}
+html[dir="rtl"] .divider::before, html[dir="rtl"] .divider::after{content:"";}
+html[dir="rtl"] .timeline{border-left:none; border-right:2px solid var(--sand); margin-left:0; margin-right:8px; padding-left:0; padding-right:32px;}
+html[dir="rtl"] .timeline-item::before{left:auto; right:-41px;}
+html[dir="rtl"] .quote-block{border-left:none; border-right:3px solid var(--sand); padding-left:0; padding-right:26px;}
+html[dir="rtl"] .info-row .ico{order:2;}
+html[dir="rtl"] nav.primary-nav a{border-bottom:2px solid transparent;}
+html[dir="rtl"] .card ul.figures{padding:0;}

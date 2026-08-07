@@ -6,7 +6,7 @@
 <title>FAQ — WWOA</title>
 <link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,26 +15,27 @@
   <div class="nav-wrap">
     <a href="index.html" class="brand">
       <img src="images/logo.jpg" alt="WWOA logo">
-      <span class="brand-text">Wahaj Welfare<br><small>Organization for Afghanistan</small></span>
+      <span class="brand-text"><span data-i18n="brand.name">Wahaj Welfare</span><br><small data-i18n="brand.sub">Organization for Afghanistan</small></span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
     <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="donate.html">Donate</a>
-      <a href="faq.html" class="active">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="donate.html" data-i18n="nav.donate">Donate</a>
+      <a href="faq.html" class="active" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a href="donate.html" class="btn btn-primary nav-cta">Donate</a>
+    <button id="lang-toggle" class="lang-toggle-btn" type="button">&#127760; <span id="lang-toggle-label">دری</span></button>
+    <a href="donate.html" class="btn btn-primary nav-cta" data-i18n="nav.donateBtn">Donate</a>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Frequently Asked Questions</span>
-    <h1>Common questions about WWOA</h1>
-    <p>Everything you need to know about our organization, our work, and how to get involved.</p>
+    <span class="eyebrow" data-i18n="faq.eyebrow">Frequently Asked Questions</span>
+    <h1 data-i18n="faq.h1">Common questions about WWOA</h1>
+    <p data-i18n="faq.lead">Everything you need to know about our organization, our work, and how to get involved.</p>
   </div>
 </section>
 
@@ -42,43 +43,43 @@
   <div class="container">
 
     <div class="faq-item">
-      <button class="faq-q"><span>What is WWOA?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>WWOA (Wahaj Welfare Organization for Afghanistan) is an independent, non-profit, non-political, and non-governmental organization founded in 2014. We work in education, healthcare, vocational training, and psychosocial support to help vulnerable communities across Afghanistan.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q1">What is WWOA?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a1">WWOA (Wahaj Welfare Organization for Afghanistan) is an independent, non-profit, non-political, and non-governmental organization founded in 2014. We work in education, healthcare, vocational training, and psychosocial support to help vulnerable communities across Afghanistan.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>Where is WWOA based?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>WWOA was originally founded in Jalalabad, Nangarhar Province, and later relocated its head office to Kabul to support a broader national presence.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q2">Where is WWOA based?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a2">WWOA was originally founded in Jalalabad, Nangarhar Province, and later relocated its head office to Kabul to support a broader national presence.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>Is WWOA officially registered?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>Yes. WWOA is registered with Afghanistan's Ministry of Economy under registration number 3198.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q3">Is WWOA officially registered?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a3">Yes. WWOA is registered with Afghanistan's Ministry of Economy under registration number 3198.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>What kind of projects has WWOA completed?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>WWOA has conducted a free medical camp treating 258 patients in Kama district, Nangarhar; a three-month vocational sewing training program for 10 women in Afshar; and three mental health and wellbeing sessions reaching 47 women. See our <a href="projects.html" style="text-decoration:underline;">Projects page</a> for full details.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q4">What kind of projects has WWOA completed?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a4">WWOA has conducted a free medical camp treating 258 patients in Kama district, Nangarhar; a three-month vocational sewing training program for 10 women in Afshar; and three mental health and wellbeing sessions reaching 47 women. See our <a href="projects.html" style="text-decoration:underline;">Projects page</a> for full details.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>Can I donate online right now?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>Online donation processing is coming soon. In the meantime, please reach out via our <a href="contact.html" style="text-decoration:underline;">Contact page</a> and we'll help you make a contribution directly.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q5">Can I donate online right now?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a5">Online donation processing is coming soon. In the meantime, please reach out via our <a href="contact.html" style="text-decoration:underline;">Contact page</a> and we'll help you make a contribution directly.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>How is my donation used?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>Donations go directly toward WWOA's programs — medical camps, vocational training, and psychosocial support sessions — as well as the logistics, staff, and materials needed to deliver them.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q6">How is my donation used?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a6">Donations go directly toward WWOA's programs — medical camps, vocational training, and psychosocial support sessions — as well as the logistics, staff, and materials needed to deliver them.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>Does WWOA work with government or local partners?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>Yes. WWOA regularly partners with local public health departments, district administrations, and community elders to plan and deliver its programs safely and effectively.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q7">Does WWOA work with government or local partners?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a7">Yes. WWOA regularly partners with local public health departments, district administrations, and community elders to plan and deliver its programs safely and effectively.</p></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q"><span>How can I get in touch?</span><span class="icon">+</span></button>
-      <div class="faq-a"><p>You can reach us at <a href="mailto:info@wahajwelfare.org" style="text-decoration:underline;">info@wahajwelfare.org</a>, by phone at +93 794 349 185, or through our <a href="contact.html" style="text-decoration:underline;">Contact page</a>.</p></div>
+      <button class="faq-q"><span data-i18n="faq.q8">How can I get in touch?</span><span class="icon">+</span></button>
+      <div class="faq-a"><p data-i18n="faq.a8">You can reach us at <a href="mailto:info@wahajwelfare.org" style="text-decoration:underline;">info@wahajwelfare.org</a>, by phone at +93 794 349 185, or through our <a href="contact.html" style="text-decoration:underline;">Contact page</a>.</p></div>
     </div>
 
   </div>
@@ -86,9 +87,9 @@
 
 <section class="section section--navy">
   <div class="container" style="text-align:center;">
-    <span class="eyebrow">Still Have Questions?</span>
-    <h2>We're happy to help.</h2>
-    <a href="contact.html" class="btn btn-primary" style="margin-top:14px;">Contact Us</a>
+    <span class="eyebrow" data-i18n="faq.moreEyebrow">Still Have Questions?</span>
+    <h2 data-i18n="faq.moreH2">We're happy to help.</h2>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:14px;" data-i18n="faq.contactBtn">Contact Us</a>
   </div>
 </section>
 
@@ -97,31 +98,32 @@
     <div>
       <div class="brand" style="color:#fff; margin-bottom:14px;">
         <img src="images/logo.jpg" alt="WWOA logo" style="height:48px;">
-        <span class="brand-text" style="color:#fff;">Wahaj Welfare<br><small style="color:#9C9884;">Organization for Afghanistan</small></span>
+        <span class="brand-text" style="color:#fff;"><span data-i18n="brand.name">Wahaj Welfare</span><br><small style="color:#9C9884;" data-i18n="brand.sub">Organization for Afghanistan</small></span>
       </div>
-      <p style="max-width:320px; font-size:.9rem;">An independent, non-political, non-profit organization serving Afghanistan since 2014.</p>
+      <p style="max-width:320px; font-size:.9rem;" data-i18n="footer.tagline">An independent, non-political, non-profit organization serving Afghanistan since 2014.</p>
     </div>
     <div>
-      <h4>Explore</h4>
-      <a href="about.html">About Us</a>
-      <a href="projects.html">Projects</a>
-      <a href="donate.html">Donate</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <h4 data-i18n="footer.explore">Explore</h4>
+      <a href="about.html" data-i18n="nav.about">About Us</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="donate.html" data-i18n="nav.donate">Donate</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h4 data-i18n="footer.contactHeading">Contact</h4>
       <a href="mailto:info@wahajwelfare.org">info@wahajwelfare.org</a>
       <a href="tel:+93794349185">+93 794 349 185</a>
-      <a href="#">Bahristan, Dr. Abdullah St, Kabul, Afghanistan</a>
+      <a href="#" data-i18n="footer.address">Bahristan, Dr. Abdullah St, Kabul, Afghanistan</a>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>&copy; 2026 Wahaj Welfare Organization for Afghanistan (WWOA).</span>
-    <span>Registered with the Ministry of Economy — Reg. No. 3198</span>
+    <span data-i18n="footer.copyright">&copy; 2026 Wahaj Welfare Organization for Afghanistan (WWOA).</span>
+    <span data-i18n="footer.registration">Registered with the Ministry of Economy — Reg. No. 3198</span>
   </div>
 </footer>
 
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
