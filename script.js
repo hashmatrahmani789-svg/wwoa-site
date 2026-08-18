@@ -36,6 +36,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ===================== Join with us modal ===================== */
+  var joinModal = document.querySelector('#join-modal');
+  var joinForm = document.querySelector('#join-form');
+  var joinNote = document.querySelector('#join-form-note');
+  var joinThanksShown = false;
+  var joinThanksEn = "Thank you — this is a sample form and is not connected to email yet. Please reach us by email or phone.";
+
+  function openJoinModal() {
+    if (!joinModal) return;
+    joinModal.hidden = false;
+    document.body.classList.add('modal-open');
+    var first = joinModal.querySelector('input');
+    if (first) first.focus();
+  }
+
+  function closeJoinModal() {
+    if (!joinModal) return;
+    joinModal.hidden = true;
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('.js-open-join').forEach(function (btn) {
+    btn.addEventListener('click', openJoinModal);
+  });
+  document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+    el.addEventListener('click', closeJoinModal);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && joinModal && !joinModal.hidden) closeJoinModal();
+  });
+
+  if (joinForm) {
+    joinForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      joinThanksShown = true;
+      if (joinNote) {
+        var isFaNow = document.documentElement.getAttribute('lang') === 'fa';
+        joinNote.textContent = (isFaNow && dict['join.thanks']) ? dict['join.thanks'] : joinThanksEn;
+      }
+    });
+  }
+
   /* ===================== Language toggle (EN / Dari) ===================== */
   var dict = (window.WWOA_I18N && window.WWOA_I18N.fa) ? window.WWOA_I18N.fa : {};
 
@@ -60,6 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var label = document.querySelector('#lang-toggle-label');
     if (label) label.textContent = isFa ? 'English' : 'دری';
+
+    if (joinThanksShown && joinNote) {
+      joinNote.textContent = (isFa && dict['join.thanks']) ? dict['join.thanks'] : joinThanksEn;
+    }
 
     try { localStorage.setItem('wwoa_lang', lang); } catch (e) {}
   }

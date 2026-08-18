@@ -8,7 +8,7 @@
 <link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -37,10 +37,11 @@
     <div>
       <span class="eyebrow" data-i18n="home.eyebrow">WWOA &middot; Est. 2014 &middot; Kabul, Afghanistan</span>
       <h1 data-i18n="home.h1">Light, hope, and dignity for Afghanistan's women and children.</h1>
-      <p class="lead" data-i18n="home.lead">Wahaj Welfare Organization for Afghanistan is an independent, non-political, non-profit organization delivering education, healthcare, and psychosocial support to some of Afghanistan's most vulnerable communities.</p>
+      <p class="lead" data-i18n="home.lead">Wahaj Welfare Organization for Afghanistan is an independent, non-political, non-profit organization that serves some of Afghanistan's most vulnerable communities by providing educational, health, and psychosocial services in the areas of humanitarian aid, education and vocational training, health and hygiene, capacity building, awareness-raising, climate action, empowerment of women and youth, and agriculture.</p>
       <div class="hero-actions">
         <a href="donate.html" class="btn btn-primary" data-i18n="home.btnSupport">Support Our Work</a>
         <a href="projects.html" class="btn btn-outline-light" data-i18n="home.btnProjects">See Our Projects</a>
+        <button type="button" class="btn btn-primary js-open-join" data-i18n="home.btnJoin">Join with us</button>
       </div>
     </div>
     <img class="hero-emblem" src="images/logo.jpg" alt="WWOA emblem — hands, dove, and book">
@@ -117,9 +118,52 @@
     <span class="eyebrow" data-i18n="home.ctaEyebrow">Get Involved</span>
     <h2 data-i18n="home.ctaH2">Help us reach the next community.</h2>
     <p style="max-width:560px; margin:0 auto 28px;" data-i18n="home.ctaP">Every contribution — large or small — helps WWOA extend healthcare, training, and psychosocial support to more women and children across Afghanistan.</p>
-    <a href="donate.html" class="btn btn-primary" data-i18n="home.donateNow">Donate Now</a>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="donate.html" class="btn btn-primary" data-i18n="home.donateNow">Donate Now</a>
+      <button type="button" class="btn btn-primary js-open-join" data-i18n="home.btnJoin">Join with us</button>
+    </div>
   </div>
 </section>
+
+<div class="modal" id="join-modal" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="join-title">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">&times;</button>
+    <span class="eyebrow" data-i18n="join.eyebrow">Membership</span>
+    <h2 id="join-title" data-i18n="join.title">Join our team</h2>
+    <p class="join-lead" data-i18n="join.lead">Share a few details and become part of the WWOA team.</p>
+    <form class="form" id="join-form">
+      <div class="form-row">
+        <div>
+          <label for="join-first-name" data-i18n="join.firstName">First name</label>
+          <input type="text" id="join-first-name" name="firstName" required autocomplete="given-name">
+        </div>
+        <div>
+          <label for="join-last-name" data-i18n="join.lastName">Last name</label>
+          <input type="text" id="join-last-name" name="lastName" required autocomplete="family-name">
+        </div>
+      </div>
+      <label for="join-father-name" data-i18n="join.fatherName">Father's name</label>
+      <input type="text" id="join-father-name" name="fatherName" required>
+      <div class="form-row">
+        <div>
+          <label for="join-phone" data-i18n="join.phone">Phone</label>
+          <input type="tel" id="join-phone" name="phone" required autocomplete="tel">
+        </div>
+        <div>
+          <label for="join-email" data-i18n="join.email">Email</label>
+          <input type="email" id="join-email" name="email" required autocomplete="email">
+        </div>
+      </div>
+      <label for="join-city" data-i18n="join.city">City / Province</label>
+      <input type="text" id="join-city" name="city" autocomplete="address-level2">
+      <label for="join-help" data-i18n="join.help">How would you like to help? (optional)</label>
+      <textarea id="join-help" name="help"></textarea>
+      <button type="submit" class="btn btn-primary" data-i18n="join.submit">Submit application</button>
+      <p class="small-note" id="join-form-note" style="margin-top:14px;"></p>
+    </form>
+  </div>
+</div>
 
 <footer>
   <div class="container footer-grid">
@@ -151,7 +195,7 @@
   </div>
 </footer>
 
-<script src="translations.js"></script>
-<script src="script.js"></script>
+<script src="translations.js?v=5"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>
