@@ -47,7 +47,7 @@
         <span class="ico">&#9993;</span>
         <div>
           <strong data-i18n="contact.email">Email</strong><br>
-          <a href="mailto:info@wahajwelfare.org">info@wahajwelfare.org</a>
+          <a href="mailto:contact@wahajwelfare.org">contact@wahajwelfare.org</a>
         </div>
       </div>
       <div class="info-row">
@@ -75,7 +75,13 @@
 
     <div>
       <h2 data-i18n="contact.formH2">Send a Message</h2>
-      <form class="form" id="contact-form">
+      <form class="form" id="contact-form" action="https://formsubmit.co/contact@wahajwelfare.org" method="POST">
+        <input type="hidden" name="_subject" value="WWOA contact form message">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="">
+        <input type="hidden" name="_url" value="">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
         <label for="name" data-i18n="contact.name">Full Name</label>
         <input type="text" id="name" name="name" required>
         <label for="email" data-i18n="contact.emailLabel">Email</label>
@@ -119,7 +125,9 @@
   </div>
 </footer>
 
-<script src="translations.js?v=2"></script>
-<script src="script.js"></script>
+<script src="translations.js?v=6"></script>
+<script src="script.js?v=5"></script>
+<script defer src="https://cdn.aseelapp.com/widget-v1.js" data-organization="organization_01M0PSYGAQQCZ6XDWA9TCK3YZN"></script>
+<script defer src="https://cdn.aseelapp.com/elements-v1.js" data-organization="organization_01M0PSYGAQQCZ6XDWA9TCK3YZN"></script>
 </body>
 </html>
