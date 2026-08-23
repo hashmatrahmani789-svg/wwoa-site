@@ -24,30 +24,89 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Contact form (placeholder — no backend yet)
+  var contactInbox = "contact@wahajwelfare.org";
+  var formAction = "https://formsubmit.co/" + contactInbox;
   var form = document.querySelector('#contact-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var note = document.querySelector('#form-note');
-      if (note) {
-        note.textContent = "Thank you — this form isn't connected to email yet. For now, please reach us directly at the email or phone number listed above.";
+  var formNote = document.querySelector('#form-note');
+  var contactThanksShown = false;
+  var contactThanksEn = "Thank you — your message has been sent. We will be in touch soon.";
+  var contactSendingEn = "Sending your message…";
+
+  function queryFlag(name) {
+    try { return new URLSearchParams(window.location.search).get(name) === "1"; }
+    catch (e) { return false; }
+  }
+
+  function returnUrl(flag) {
+    return window.location.origin + window.location.pathname + "?" + flag + "=1";
+  }
+
+  function setHidden(targetForm, name, value) {
+    var input = targetForm.querySelector('[name="' + name + '"]');
+    if (input) input.value = value;
+  }
+
+  function honeyFilled(targetForm) {
+    var honey = targetForm.querySelector('[name="_honey"]');
+    return !!(honey && honey.value);
+  }
+
+  function mailtoSubmit(subject, fields) {
+    var body = Object.keys(fields).map(function (key) {
+      return key + ": " + (fields[key] || "");
+    }).join("\n");
+    window.location.href = "mailto:" + contactInbox +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+  }
+
+  function wireMailForm(targetForm, options) {
+    if (!targetForm) return;
+    targetForm.setAttribute("action", formAction);
+    targetForm.setAttribute("method", "POST");
+    targetForm.addEventListener("submit", function (e) {
+      if (honeyFilled(targetForm)) {
+        e.preventDefault();
+        return;
       }
+      if (window.location.protocol === "file:") {
+        e.preventDefault();
+        mailtoSubmit(options.subject, options.fields());
+        return;
+      }
+      setHidden(targetForm, "_next", returnUrl(options.flag));
+      setHidden(targetForm, "_url", window.location.href);
+      if (options.note) options.note.textContent = options.sending;
     });
   }
+
+  wireMailForm(form, {
+    subject: "WWOA contact form message",
+    flag: "sent",
+    note: formNote,
+    sending: contactSendingEn,
+    fields: function () {
+      return {
+        Name: form.name.value,
+        Email: form.email.value,
+        Message: form.message.value
+      };
+    }
+  });
 
   /* ===================== Join with us modal ===================== */
   var joinModal = document.querySelector('#join-modal');
   var joinForm = document.querySelector('#join-form');
   var joinNote = document.querySelector('#join-form-note');
   var joinThanksShown = false;
-  var joinThanksEn = "Thank you — this is a sample form and is not connected to email yet. Please reach us by email or phone.";
+  var joinThanksEn = "Thank you — your application has been sent. We will be in touch soon.";
+  var joinSendingEn = "Sending your application…";
 
   function openJoinModal() {
     if (!joinModal) return;
     joinModal.hidden = false;
     document.body.classList.add('modal-open');
-    var first = joinModal.querySelector('input');
+    var first = joinModal.querySelector('input:not([type="hidden"]):not([name="_honey"])');
     if (first) first.focus();
   }
 
@@ -67,16 +126,23 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape' && joinModal && !joinModal.hidden) closeJoinModal();
   });
 
-  if (joinForm) {
-    joinForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      joinThanksShown = true;
-      if (joinNote) {
-        var isFaNow = document.documentElement.getAttribute('lang') === 'fa';
-        joinNote.textContent = (isFaNow && dict['join.thanks']) ? dict['join.thanks'] : joinThanksEn;
-      }
-    });
-  }
+  wireMailForm(joinForm, {
+    subject: "WWOA membership application",
+    flag: "joined",
+    note: joinNote,
+    sending: joinSendingEn,
+    fields: function () {
+      return {
+        "First name": joinForm.firstName.value,
+        "Last name": joinForm.lastName.value,
+        "Father's name": joinForm.fatherName.value,
+        Phone: joinForm.phone.value,
+        Email: joinForm.email.value,
+        "City / Province": joinForm.city.value,
+        Help: joinForm.help.value
+      };
+    }
+  });
 
   /* ===================== Language toggle (EN / Dari) ===================== */
   var dict = (window.WWOA_I18N && window.WWOA_I18N.fa) ? window.WWOA_I18N.fa : {};
@@ -106,6 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (joinThanksShown && joinNote) {
       joinNote.textContent = (isFa && dict['join.thanks']) ? dict['join.thanks'] : joinThanksEn;
     }
+    if (contactThanksShown && formNote) {
+      formNote.textContent = (isFa && dict['contact.thanks']) ? dict['contact.thanks'] : contactThanksEn;
+    }
 
     try { localStorage.setItem('wwoa_lang', lang); } catch (e) {}
   }
@@ -113,6 +182,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var savedLang = 'en';
   try { savedLang = localStorage.getItem('wwoa_lang') || 'en'; } catch (e) {}
   applyLang(savedLang);
+
+  if (queryFlag("joined") && joinModal) {
+    joinThanksShown = true;
+    openJoinModal();
+    if (joinNote) {
+      joinNote.textContent = (document.documentElement.getAttribute('lang') === 'fa' && dict['join.thanks'])
+        ? dict['join.thanks']
+        : joinThanksEn;
+    }
+  }
+  if (queryFlag("sent") && formNote) {
+    contactThanksShown = true;
+    formNote.textContent = (document.documentElement.getAttribute('lang') === 'fa' && dict['contact.thanks'])
+      ? dict['contact.thanks']
+      : contactThanksEn;
+  }
 
   var langBtn = document.querySelector('#lang-toggle');
   if (langBtn) {
