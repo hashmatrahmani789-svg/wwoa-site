@@ -462,3 +462,18 @@ html[dir="rtl"] .site-header .brand{font-size:.85rem;}
 .social-links{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;}
 footer .social-links a{display:inline-flex; align-items:center; gap:8px; margin:0; padding:8px 12px; border:1px solid rgba(255,255,255,.18); border-radius:999px; font-size:.88rem;}
 footer .social-links a:hover{border-color:var(--sand);}
+
+/* ---------- Compact hero (phone + desktop) ---------- */
+.hero-inner{padding:64px 24px 60px; gap:48px; grid-template-columns:1.2fr .8fr;}
+.hero h1{font-size:clamp(1.75rem, 3.2vw, 2.6rem); line-height:1.2; margin-bottom:14px;}
+.hero p.lead{font-size:1rem; line-height:1.7; max-width:520px;}
+.hero-actions{margin-top:22px; gap:10px;}
+.hero-photo{width:min(380px, 100%);}
+@media (max-width: 820px){
+  .hero-inner{grid-template-columns:1fr; padding:40px 20px 44px; gap:28px;}
+  .hero h1{font-size:1.6rem;}
+  .hero p.lead{font-size:.95rem;}
+  .hero-photo{width:min(300px, 100%);}
+  .hero-actions .btn{flex:1 1 140px; padding-inline:14px;}
+}
+html[lang="fa"] .hero h1{line-height:1.45;}
