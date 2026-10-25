@@ -441,3 +441,24 @@ html[dir="rtl"] nav.primary-nav a{border-bottom:2px solid transparent;}
 html[dir="rtl"] .card ul.figures{padding:0;}
 html[dir="rtl"] .modal-close{right:auto; left:14px;}
 html[dir="rtl"] .faq-q{text-align:right;}
+
+/* ---------- Hero photo (replaces the logo card) ---------- */
+.hero-photo{
+  justify-self:center;
+  width:min(440px, 100%);
+  aspect-ratio:4 / 3; object-fit:cover;
+  border-radius:18px;
+  border:6px solid #fff;
+  box-shadow:0 24px 50px rgba(0,0,0,.28);
+}
+
+/* ---------- Smaller header brand ---------- */
+.site-header .brand{font-size:.92rem; gap:10px;}
+.site-header .brand img{height:38px; width:38px; border-radius:8px;}
+.site-header .brand-text small{font-size:.56rem;}
+html[dir="rtl"] .site-header .brand{font-size:.85rem;}
+
+/* ---------- Social links ---------- */
+.social-links{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;}
+footer .social-links a{display:inline-flex; align-items:center; gap:8px; margin:0; padding:8px 12px; border:1px solid rgba(255,255,255,.18); border-radius:999px; font-size:.88rem;}
+footer .social-links a:hover{border-color:var(--sand);}
