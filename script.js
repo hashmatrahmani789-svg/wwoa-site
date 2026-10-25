@@ -206,4 +206,34 @@ document.addEventListener('DOMContentLoaded', function () {
       applyLang(current === 'fa' ? 'en' : 'fa');
     });
   }
+
+  var aseelOrg = "organization_01M0PSYGAQQCZ6XDWA9TCK3YZN";
+  var aseelCampaign = "camp_01M2Z61BTM0E1E96JP929FZ91A";
+
+  function openAseelDonate() {
+    if (document.getElementById("aidos-donation-iframe")) return;
+    var wrapper = document.createElement("div");
+    wrapper.id = "aidos-iframe-wrapper";
+    wrapper.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);";
+    var iframe = document.createElement("iframe");
+    iframe.id = "aidos-donation-iframe";
+    iframe.src =
+      "https://aseelapp.co/popup/?campaign=" +
+      encodeURIComponent(aseelCampaign) +
+      "&organization=" +
+      encodeURIComponent(aseelOrg);
+    iframe.allow = "payment *; autoplay *; clipboard-read; clipboard-write";
+    iframe.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100dvh;border:none;z-index:9999;background:transparent;";
+    document.documentElement.style.setProperty("overflow", "hidden", "important");
+    document.documentElement.style.setProperty("overscroll-behavior-y", "none", "important");
+    wrapper.appendChild(iframe);
+    document.body.appendChild(wrapper);
+  }
+
+  document.querySelectorAll(".js-aseel-donate").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openAseelDonate();
+    });
+  });
 });
