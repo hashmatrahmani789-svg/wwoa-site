@@ -477,3 +477,14 @@ footer .social-links a:hover{border-color:var(--sand);}
   .hero-actions .btn{flex:1 1 140px; padding-inline:14px;}
 }
 html[lang="fa"] .hero h1{line-height:1.45;}
+
+/* ---------- Campaign card ---------- */
+.campaign{display:grid; grid-template-columns:1fr 1.15fr; gap:40px; align-items:center; background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px; box-shadow:var(--shadow);}
+.campaign-photo{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:12px;}
+.campaign-body h2{margin:6px 0 12px;}
+.campaign-lead{font-family:var(--font-display); font-style:italic; font-size:1.12rem; color:var(--navy);}
+.campaign-verse{margin:16px 0; padding:12px 18px; border-left:3px solid var(--sand); background:var(--cream); border-radius:8px;}
+.campaign-verse .ar{display:block; font-family:'Noto Naskh Arabic', serif; font-size:1.35rem; color:var(--navy); margin-bottom:4px;}
+html[dir="rtl"] .campaign-verse{border-left:none; border-right:3px solid var(--sand);}
+html[dir="rtl"] .campaign-lead{font-style:normal;}
+@media (max-width:820px){.campaign{grid-template-columns:1fr; padding:18px; gap:20px;}}
