@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var aseelOrg = "organization_01M0PSYGAQQCZ6XDWA9TCK3YZN";
   var aseelCampaign = "camp_01M2Z61BTM0E1E96JP929FZ91A";
 
-  function openAseelDonate() {
+  function openAseelDonate(campaign) {
     if (document.getElementById("aidos-donation-iframe")) return;
     var wrapper = document.createElement("div");
     wrapper.id = "aidos-iframe-wrapper";
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     iframe.id = "aidos-donation-iframe";
     iframe.src =
       "https://aseelapp.co/popup/?campaign=" +
-      encodeURIComponent(aseelCampaign) +
+      encodeURIComponent(campaign || aseelCampaign) +
       "&organization=" +
       encodeURIComponent(aseelOrg);
     iframe.allow = "payment *; autoplay *; clipboard-read; clipboard-write";
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll(".js-aseel-donate").forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-      openAseelDonate();
+      openAseelDonate(btn.getAttribute("data-campaign"));
     });
   });
 });
