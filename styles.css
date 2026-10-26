@@ -492,3 +492,13 @@ html[dir="rtl"] .campaign-lead{font-style:normal;}
 .campaign-media [data-aidos-widget-type]{width:100%; max-width:440px;}
 .campaign-media:has([data-aidos-widget-type] *) .campaign-photo{display:none;}
 .campaign-media [data-aidos-widget-type]:empty{display:none;}
+
+/* ---------- Campaign cards grid ---------- */
+.camps-h2{text-align:center; margin-bottom:36px;}
+.camps-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 340px)); justify-content:center; gap:28px;}
+.camp-card{background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column; transition:transform .18s ease, box-shadow .18s ease;}
+.camp-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg);}
+.camp-card img{width:100%; aspect-ratio:16/11; object-fit:cover; display:block;}
+.camp-card-body{padding:18px 18px 20px; display:flex; flex-direction:column; gap:14px; flex:1;}
+.camp-card-body h3{font-size:1.05rem; line-height:1.4; margin:0; flex:1;}
+.camp-donate{width:100%; display:flex; align-items:center; justify-content:center; gap:8px;}
